@@ -68,4 +68,39 @@ def graf_5_korelacijska_matrika(df):
     plt.tight_layout()
     plt.show()
 
+def graf_6_7_analiza_trajanja(df):
+    """
+    Analizira povezavo med dolžino filma in zaslužkom ter dolžino filma in oceno.
+    Prikaže raztresene grafe in izpiše Pearsonov korelacijski koeficient.
+    """
+    if "runtime" not in df.columns:
+        print("Stolpec 'runtime' ni prisoten v podatkih.")
+        return
+    
+    # Prvi graf: trajanje filma vs. zaslužek
+    if "revenue" in df.columns:
+        plt.figure(figsize=(10, 6))
+        sns.scatterplot(data=df, x="runtime", y="revenue")
+        plt.title("Povezava med dolžino filma in zaslužkom")
+        plt.xlabel("Dolžina filma (v minutah)")
+        plt.ylabel("Zaslužek (USD)")
+        plt.tight_layout()
+        plt.show()
+
+        korelacija_revenue = df[["runtime", "revenue"]].dropna().corr().iloc[0, 1]
+        print(f"Korelacija (runtime ↔ revenue): {korelacija_revenue:.3f}")
+
+    # Drugi graf: trajanje filma vs. ocena
+    if "vote_average" in df.columns:
+        plt.figure(figsize=(10, 6))
+        sns.scatterplot(data=df, x="runtime", y="vote_average")
+        plt.title("Povezava med dolžino filma in oceno")
+        plt.xlabel("Dolžina filma (v minutah)")
+        plt.ylabel("Povprečna ocena")
+        plt.tight_layout()
+        plt.show()
+
+        korelacija_ocena = df[["runtime", "vote_average"]].dropna().corr().iloc[0, 1]
+        print(f"Korelacija (runtime ↔ vote_average): {korelacija_ocena:.3f}")
+
 
