@@ -37,14 +37,14 @@ Dodatno je bil za vsak film izračunan še ROI (donosnost investicije).
 
 ## Navodila za uporabo
 
-Če želiš samo pregledati analizo, odpri datoteko `analiza.ipynb` v okolju Jupyter Notebook. V tem primeru se uporabijo že shranjene `.csv` datoteke v mapi `data/`.
+Če želiš samo pregledati analizo, odpri datoteko `analiza.ipynb` v okolju Jupyter Notebook. V tem primeru se uporabijo že shranjene `.csv` datoteke v mapi `data`.
 
 Če želiš sam zajeti sveže podatke:
 
 1. Zaženi datoteko `main.py`. Ta bo:
    - zajela podatke iz TMDb in Box Office Mojo,
-   - jih shranila v `.csv` datoteke v mapi `data/`.
+   - jih shranila v `.csv` datoteke v mapi `data`.
 
 2. Nato odpri `analiza.ipynb` in ponovno zaženi celoten zvezek.
 
-Uporabljene knjižnice so requests, pandas, matplotlib, seaborn, os, re, io in plotly.express za zemljevid na koncu analize
+Uporabljene knjižnice so requests, pandas, matplotlib, seaborn, os, re, io in plotly.express za zemljevid na koncu analize.
