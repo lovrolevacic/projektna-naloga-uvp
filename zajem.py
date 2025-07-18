@@ -32,7 +32,7 @@ def zajemi_filme_tmdb(n=100):
         if "results" not in data:
             print(f"API odgovor ne vsebuje 'results': {data}")
             break
-
+            
         for film in data["results"]:
             film_id = film["id"]
             # Pridobi podrobnosti o filmu
@@ -44,7 +44,7 @@ def zajemi_filme_tmdb(n=100):
             except requests.exceptions.RequestException as e:
                 print(f"Napaka pri pridobivanju podrobnosti filma {film_id}: {e}")
                 continue
-
+            
             release_date = podrobnosti.get("release_date", "")
             year = None
             if release_date and len(release_date) >= 4:
@@ -52,7 +52,7 @@ def zajemi_filme_tmdb(n=100):
                     year = int(release_date[:4])
                 except ValueError:
                     year = None
-
+            # Shrani relevantne podatke v seznam
             filmi.append({
                 "title": podrobnosti.get("title"),
                 "year": year,
@@ -70,7 +70,7 @@ def zajemi_filme_tmdb(n=100):
     return filmi
 
 def zajemi_boxoffice():
-    '''Finkcija zajeme podatke iz strani Box Office Mojo'''
+    '''Funkcija zajeme podatke iz strani Box Office Mojo'''
     url = "https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW"
     r = requests.get(url)
     r.raise_for_status()
@@ -78,7 +78,7 @@ def zajemi_boxoffice():
     tabele = pd.read_html(StringIO(r.text))
     df = tabele[0]  # Predpostavimo, da je prva tabela prava
 
-    # Preimenujemo stolpce v ustrezne za združevanje
+    # Preimenuje stolpce v ustrezne za združevanje
     df = df[['Title', 'Lifetime Gross', 'Year']]
     df = df.rename(columns={
         'Title': 'title',
@@ -86,7 +86,7 @@ def zajemi_boxoffice():
         'Year': 'year'
     })
 
-    # Očistimo revenue
+    # Očisti revenue
     df['revenue'] = df['revenue'].replace('[\$,]', '', regex=True).astype(int)
 
     return df
