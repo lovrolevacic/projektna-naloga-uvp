@@ -26,7 +26,6 @@ Dodatno je bil za vsak film izračunan še ROI (donosnost investicije).
 ## Analiza vključuje
 
 - čiščenje in povezovanje podatkov iz obeh virov,
-- standardizacijo naslovov za uspešno ujemanje,
 - izračun ROI,
 - vizualizacijo rezultatov:
   - histogram ocen (TMDb),
