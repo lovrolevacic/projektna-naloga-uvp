@@ -28,7 +28,7 @@ Dodatno je bil za vsak film izračunan še ROI (donosnost investicije).
 - čiščenje in povezovanje podatkov iz obeh virov,
 - izračun ROI,
 - vizualizacijo rezultatov:
-  - histogram ocen (TMDb),
+  - razmerje med oceno in zaslužkom,
   - razmerje med proračunom in zaslužkom,
   - top 10 filmov po oceni,
   - top 10 filmov po zaslužku,
