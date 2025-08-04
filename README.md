@@ -34,7 +34,7 @@ Dodatno je bil za vsak film izračunan še ROI (donosnost investicije).
   - top 10 filmov po zaslužku,
   - povezavo med dolžino filma (runtime) ter povprečno oceno in zaslužkom,
   - povezavo med dolžino filma in povprečno oceno.
-  - korelacijska matrika številčnih spremenljivk.
+  - korelacijsko matriko številčnih spremenljivk.
 
 ## Navodila za uporabo
 
