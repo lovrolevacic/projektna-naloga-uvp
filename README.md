@@ -48,4 +48,4 @@ Dodatno je bil za vsak film izračunan še ROI (donosnost investicije).
 
 2. Nato odpri `analiza.ipynb` in ponovno zaženi celoten zvezek.
 
-Uporabljene knjižnice so requests, pandas, dotenv, matplotlib, seaborn, os, re, io in plotly.express za zemljevid na koncu analize.
+Uporabljene knjižnice so requests, pandas, dotenv, seaborn, os, re, io in matplotlib.
