@@ -1,0 +1,8 @@
+pandas>=2.0
+requests>=2.31
+python-dotenv>=1.0
+matplotlib>=3.7
+seaborn>=0.13
+plotly>=5.18
+lxml>=5.0
+notebook>=7.0
